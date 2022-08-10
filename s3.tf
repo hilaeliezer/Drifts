@@ -21,14 +21,14 @@ resource "aws_s3_bucket" "hilaData" {
     Name        = "${local.resource_prefix.value}-data-hila1-acme"
     Environment = local.resource_prefix.value
   }, {
-    git_commit           = "d68d2897add1239bc2203a5ed0632a5cdd8ff8cefb0"
+    git_commit           = "d68d2891117add1239bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
-    yor_trace            = "48666bb2-3c3c-45ff-b0df-63bcf2afd22b"
+    yor_trace            = "f3bc5b77-deab-41b0-8288-e761c98692a1"
   })
 }
 
@@ -45,12 +45,12 @@ resource "aws_s3_bucket" "hilaApple" {
     Name        = "${local.resource_prefix.value}-apple-hila1-acme"
     Environment = local.resource_prefix.value
   }, {
-    git_commit           = "d68d2897ad123d9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_commit           = "d68d28971111ad123d9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_modifiers        = "nimrodkoasdasr"
     git_org              = "bridgecrewio"
     git_repo             = "terranngoat"
-    yor_trace            = "5956fe5a-6e23-4836-a4ff-f5d2b697c44d"
+    yor_trace            = "1d90c4e9-fc33-40e0-ae58-74949e306413" 
   })
 }
