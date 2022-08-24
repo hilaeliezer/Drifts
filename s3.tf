@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "hilaApple" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = "${local.resource_prefix.value}-applee-hila1-acme"
-  acl           = "public-read-write"
+  acl           = "private"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-apple-hila1-acme"
