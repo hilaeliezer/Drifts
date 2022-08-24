@@ -15,7 +15,6 @@ resource "aws_s3_bucket" "hilaData" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = "${local.resource_prefix.value}-data-hila1-acme"
-  acl           = "public-read-write"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-data-hila1-acme"
@@ -30,7 +29,18 @@ resource "aws_s3_bucket" "hilaData" {
     git_repo             = "terragoat"
     yor_trace            = "f3bc5b77-deab-41b0-8288-e761c98692a1"
   })
+  grant {
+    type = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+    id = "89f4686bb4e9705823aef87dd8d7ef1dc1eebf4081cc8b7cb4270f74d03da811"
+  }
+  grant {
+    uri = "http://acs.amazonaws.com/groups/global/AllUsers"
+    type = "Group"
+    permissions = ["READ", "WRITE"]
+  }
 }
+
 
 
 resource "aws_s3_bucket" "hilaApple" {
@@ -39,7 +49,6 @@ resource "aws_s3_bucket" "hilaApple" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = "${local.resource_prefix.value}-applee-hila1-acme"
-  acl           = "private"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-apple-hila1-acme"
@@ -53,4 +62,15 @@ resource "aws_s3_bucket" "hilaApple" {
     git_repo             = "terranngoat"
     yor_trace            = "1d90c4e9-fc33-40e0-ae58-74949e306413" 
   })
+  grant {
+    uri = "http://acs.amazonaws.com/groups/global/AllUsers"
+    type = "Group"
+    permissions = ["READ", "WRITE"]
+  }
+  grant {
+    type = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+    id = "89f4686bb4e9705823aef87dd8d7ef1dc1eebf4081cc8b7cb4270f74d03da811"
+  }
 }
+
