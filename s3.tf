@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "hilaData" {
     git_commit           = "d68d2891117add1239bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "20120-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
+    git_last_modified_by = "nimrodkor+1@gmail.com"
     git_modifiers        = "nimrodk111111or"
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
@@ -35,7 +35,7 @@ resource "aws_s3_bucket" "hilaData" {
 
 resource "aws_s3_bucket" "hilaApple" {
   # bucket is public
-  # bucket is not encrypted
+  # bucket is not encrypt111111111111ed
   # bucket does not have access logs
   # bucket does not have ver11111111sioning
   bucket        = "${local.resource_prefix.value}-applee-hila1-acme"
