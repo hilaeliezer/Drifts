@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_s3_bucket" "test_hila1_drifts_2" {
   # bucket is not encrypted
   bucket = "sample-bucket-hila1-drifts-prisma"
-  acl    = "public"
+  acl    = "public-read"
   versioning {
     enabled = true
   }
