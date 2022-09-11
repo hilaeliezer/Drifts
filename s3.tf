@@ -1,6 +1,6 @@
 provider "aws" {
-  profile = "prod"
-  region  = "us-west-2"
+  profile = "acme1"
+  region  = "us-east-1"
 }
 
 
