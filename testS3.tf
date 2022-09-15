@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "test_hila1_drifts_2" {
     git_file             = "aws/s3.tf"
     git_last_modified_at = "2022-01-05 09:41:31"
     git_last_modified_by = "hila@gmail.com"
-    git_modifiers        = "hila"
+    git_modifiers        = "hilahilahila"
     git_org              = "hila"
     git_repo             = "terraform_samples"
     yor_trace            = "7ae65f53-8634-4017-a58d-c032c42cd4cf"
