@@ -21,6 +21,7 @@ resource "aws_s3_bucket" "test_hila1_drifts_2" {
     git_org              = "hila"
     git_repo             = "terraform_samples"
     yor_trace            = "7ae65f53-8634-4017-a58d-c032c42cd4cf"
+    hila_tag  ="test_tag"
   }
 }
 
