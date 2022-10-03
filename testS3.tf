@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_s3_bucket" "test_hila1_drifts_2" {
   # bucket is not encrypted
   bucket = "sample-bucket-hila1-drifts-prisma"
-  acl    = "private"
+  acl    = "public-read"
   versioning {
     enabled = true
   }
@@ -24,3 +24,24 @@ resource "aws_s3_bucket" "test_hila1_drifts_2" {
   }
 }
 
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "test_hila1_drifts_2" {
+  bucket = aws_s3_bucket.test_hila1_drifts_2.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "AES256"
+    }
+  }
+}
+
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "test_hila1_drifts_2" {
+  bucket = aws_s3_bucket.test_hila1_drifts_2.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "aws:kms"
+    }
+  }
+}
