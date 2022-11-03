@@ -29,6 +29,19 @@ resource "aws_s3_bucket" "test_hila1_drifts_2_log_bucket" {
   bucket = "test_hila1_drifts_2-log-bucket"
 }
 
+resource "aws_s3_bucket_logging" "test_hila1_drifts_2" {
+  bucket = aws_s3_bucket.test_hila1_drifts_2.id
+
+  target_bucket = aws_s3_bucket.test_hila1_drifts_2_log_bucket.id
+  target_prefix = "log/"
+}
+
+
+
+resource "aws_s3_bucket" "test_hila1_drifts_2_log_bucket" {
+  bucket = "test_hila1_drifts_2-log-bucket"
+}
+
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "test_hila1_drifts_2_log_bucket" {
   bucket = aws_s3_bucket.test_hila1_drifts_2_log_bucket.bucket
